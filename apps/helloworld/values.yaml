@@ -1,0 +1,29 @@
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: "1.21.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort 
+  port: 80
+  nodePort: 30001
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Customize Hello World message
+helloWorldMessage: "Hello World !!! Amazing test"
+

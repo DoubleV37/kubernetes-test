@@ -12,7 +12,7 @@ helm install argo-cd argo/argo-cd --namespace argocd
 # Wait for install to complete
 sleep 5
 minikube addons enable ingress
-kubectl -n argocd  apply -f argocd-nginx.yaml
+kubectl -n argocd  apply -f argocd/root-argocd-app.yaml
 echo "Mot de passe initial pour le user admin "
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode; echo
 # Wait before running Argo CD
